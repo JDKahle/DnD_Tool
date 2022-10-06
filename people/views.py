@@ -26,5 +26,5 @@ def simple_view(request):
     return HttpResponse('Hello!')
 
 # Create your views here.
-class SlaveHomeView(TemplateView):
+class PersonHomeView(TemplateView):
     template_name = 'people/home.html'
