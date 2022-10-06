@@ -1,12 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <p>Welcome Home</p>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Home of Slaves</h1>
+
+<p>
+    TemplateView    DONE
+</p>
+<p>
+    FormView    kinda covered by CreateView
+</p>
+<p>
+    CreateView    DONE
+</p>
+<a href="{% url 'slaves:create_slave' %}">Create Slave</a>
+<p>
+    ListView
+</p>
+<a href="#">List Slave(s)</a>
+<p>
+    DetailView    DONE
+</p>
+<p>
+    UpdateView
+</p>
+<p>
+    DeleteView
+</p>
+{% block popup %}
+{% endblock %}
+
+
+{% if user.is_authenticated %}
+    <p>Welcome: {{user.get_username}}</p>
+    <a href="#">Logout Here</a>
+{% else %}
+    <p>You are NOT logged in.</p>
+    <a href="#">Login Here</a>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
