@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- <h1>Slave Form</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Create/Update">
+</form> -->
+
+
+
+<h1>Person Form</h1>
+<form method="POST">
+    {% csrf_token %}
+    
+
+
+    <h1 style="text-align: center;">{{person.first_name}} {{slave.last_name}}</h1>
+
+
+    <div style="display: flex; margin: 1rem; flex-wrap: wrap; justify-content: center; background-image: url('https://c-rpg.net/img/bg.jpg');">
+    
+        <!-- The image box -->
+        <div class="card" style="width: 18rem; margin: 3px; min-width: 200px;">
+            <img src="{{slave.image}}" class="card-img-top" alt="...">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Image URL:</b> {{form.image}}</li>
+                <!-- <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Owner:</b> {{form.owner}}</li> -->
+            </ul>
+            <div class="card-body"  style="background-color: rgb(218, 192, 129);">
+                <a href="/slaves/slave_detail/{{slave.id}}" class="card-link">Detail</a>
+                <a href="/slaves/slave_delete/{{slave.id}}" class="card-link">Delete</a>
+                <input type="submit" value="Create/Update" class="btn btn-success">
+            </div>
+            <div class="card-body"  style="background-color: rgb(218, 192, 129);">
+                <!-- <button type="button" class="btn btn-success">Success</button> -->
+            </div>
+        </div>
+    
+    
+        <!-- The overview box -->
+        <div class="card" style="width: 18rem; margin: 3px; min-width: 200px;">
+            <div class="card-body" style="background-color: rgb(184, 163, 114);">
+                <h5 class="card-title"><b>Overview</b></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>First Name:</b>{{form.first_name}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Last Name:</b> {{form.last_name}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Klasse:</b>    {{form.caste}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Team Role:</b> {{form.team_role}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Weapons:</b>   {{form.weapon}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Shield:</b>    {{form.shield}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Outfit:</b>    {{form.outfit}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Armor:</b>     {{form.armor}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Languages:</b> {{form.languages}}</li>                
+            </ul>
+        </div>
+        
+        
+        <!-- The stats box -->
+        <div class="card" style="width: 18rem; margin: 3px; min-width: 200px;">
+            <div class="card-body" style="background-color: rgb(184, 163, 114);">
+                <h5 class="card-title"><b>Statistics</b></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Str:</b>       {{form.str}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Dex:</b>       {{form.dex}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Con:</b>       {{form.con}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Int:</b>       {{form.int}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Wis:</b>       {{form.wis}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Cha:</b>       {{form.cha}}</li>
+
+                <li class="list-group-item" style="background-color: rgb(184, 163, 114);"></li>
+                
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Level:</b>     {{form.lvl}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>XP:</b>        {{form.xp}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>AC:</b>        {{form.ac}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>HP:</b>        {{form.hp}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Speed:</b>     {{form.speed}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Passive Perception:</b>        {{form.passive_perception}}</li>
+                
+            </ul>
+        </div>
+        
+        <!-- The description and inventory box -->
+        <div class="card" style="width: 18rem; margin: 3px; min-width: 200px;">
+            <div class="card-body" style="background-color: rgb(218, 192, 129);">
+                <h5 class="card-title"><b>Description:</b></h5>
+                <p class="card-text">{{form.description}}</p>
+            </div>
+            
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background-color: rgb(184, 163, 114);"></li>
+            </ul>
+            
+            <div class="card-body" style="background-color: rgb(218, 192, 129);">
+                <h5 class="card-title"><b>Inventory:</b></h5>
+                <p class="card-text">{{form.inventory}}</p>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+    
+    
+    <!-- <input type="submit" value="Create/Update"> -->
+</form>
+
+
+{% endblock content %}
