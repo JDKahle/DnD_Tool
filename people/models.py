@@ -3,7 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-class Slave(models.Model):
+class Person(models.Model):
     image = models.URLField(default='https://d1vzi28wh99zvq.cloudfront.net/images/8957/298771.png', blank=True)
 
     caste = models.CharField(max_length=100, blank=True)
