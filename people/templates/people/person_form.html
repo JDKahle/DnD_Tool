@@ -15,14 +15,14 @@
     
         <!-- The image box -->
         <div class="card" style="width: 18rem; margin: 3px; min-width: 200px;">
-            <img src="{{slave.image}}" class="card-img-top" alt="...">
+            <img src="{{person.image}}" class="card-img-top" alt="...">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Image URL:</b> {{form.image}}</li>
 
             </ul>
             <div class="card-body"  style="background-color: rgb(218, 192, 129);">
-                <a href="/slaves/slave_detail/{{slave.id}}" class="card-link">Detail</a>
-                <a href="/slaves/slave_delete/{{slave.id}}" class="card-link">Delete</a>
+                <a href="/people/person_detail/{{person.id}}" class="card-link">Detail</a>
+                <a href="/people/person_delete/{{person.id}}" class="card-link">Delete</a>
                 <input type="submit" value="Create/Update" class="btn btn-success">
             </div>
             <div class="card-body"  style="background-color: rgb(218, 192, 129);">
