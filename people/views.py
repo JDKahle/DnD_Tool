@@ -56,7 +56,7 @@ class PersonListView(LoginRequiredMixin, ListView):
 
 class NewPersonBattleListView(LoginRequiredMixin, ListView):
     model = Person
-    context_object_name = "list_of_slaves"
+    context_object_name = "list_of_people"
     queryset = Person.objects.order_by("first_name")
     template_name = 'people/person_list_battlex.html'
 
@@ -65,5 +65,5 @@ class NewPersonBattleListView(LoginRequiredMixin, ListView):
 
 class PersonLvlListView(ListView):
     model = Person
-    context_object_name = "list_of_slaves"
+    context_object_name = "list_of_people"
     queryset = Person.objects.order_by("lvl").reverse()

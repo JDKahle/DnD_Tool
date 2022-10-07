@@ -15,30 +15,30 @@
     
     <div style="display: flex; margin: 1rem; flex-wrap: wrap;">
 
-        {% for slave in list_of_slaves %}
+        {% for person in list_of_people %}
 
 
         <div class="card" style="width: 18rem; margin: 3px; min-width: 200px; background-color: rgb(218, 192, 129);">
             <!-- <img src="https://d1vzi28wh99zvq.cloudfront.net/images/8957/298771.png" class="card-img-top" alt="..."> -->
             <div class="card-body">
-                <h5 class="card-title">{{slave.caste}} {{slave.first_name}}</h5>
+                <h5 class="card-title">{{person.caste}} {{person.first_name}}</h5>
             </div>
 
             <!-- 1 -->
             <ul class="list-group list-group-flush" style="background-color: rgb(218, 192, 129);">
-                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Weapons:</b>   {{slave.weapon}}</li>
-                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Shield:</b>    {{slave.shield}}</li>
-                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>AC:</b>     {{slave.ac}}<b>Armor:</b>     {{slave.armor}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Weapons:</b>   {{person.weapon}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Shield:</b>    {{person.shield}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>AC:</b>     {{person.ac}}<b>Armor:</b>     {{person.armor}}</li>
                 
                 <li class="list-group-item" style="background-color: rgb(184, 163, 114);"></li>
 
-                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Str:</b>{{slave.str}}<b>||</b>   <b>Dex:</b>{{slave.dex}}<b>||</b>   <b>Con:</b>{{slave.con}}</li>
-                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Int:</b>{{slave.int}}<b>||</b>   <b>Wis:</b>{{slave.wis}}<b>||</b>   <b>Cha:</b>{{slave.cha}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Str:</b>{{person.str}}<b>||</b>   <b>Dex:</b>{{person.dex}}<b>||</b>   <b>Con:</b>{{person.con}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Int:</b>{{person.int}}<b>||</b>   <b>Wis:</b>{{person.wis}}<b>||</b>   <b>Cha:</b>{{person.cha}}</li>
 
                 <li class="list-group-item" style="background-color: rgb(184, 163, 114);"></li>
 
-                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Speed:</b>     {{slave.speed}}    <b>Passive Perception:</b>{{slave.passive_perception}}</li>
-                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>HP:</b>        {{slave.hp}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Speed:</b>     {{person.speed}}    <b>Passive Perception:</b>{{person.passive_perception}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>HP:</b>        {{person.hp}}</li>
             <!-- 3 -->
 
                 <!-- Hier hin kommen 2 js buttons -->
