@@ -19,40 +19,22 @@
         <div class="card" style="width: 18rem; margin: 3px; min-width: 200px; background-color: rgb(218, 192, 129);">
             <!-- <img src="https://d1vzi28wh99zvq.cloudfront.net/images/8957/298771.png" class="card-img-top" alt="..."> -->
             <div class="card-body">
-                <h5 class="card-title">{{slave.caste}} {{slave.first_name}}</h5>
+                <h5 class="card-title">{{person.caste}} {{person.first_name}}</h5>
             </div>
             <ul class="list-group list-group-flush" style="background-color: rgb(218, 192, 129);">
-                    <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Team Role:</b> {{slave.team_role}}</li>
-                    <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Weapons:</b>   {{slave.weapon}}</li>
-                    <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Shield:</b>    {{slave.shield}}</li>
-                    <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Armor:</b>     {{slave.armor}}    <b>AC:</b> {{slave.ac}}</li>
+                    <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Team Role:</b> {{person.team_role}}</li>
+                    <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Weapons:</b>   {{person.weapon}}</li>
+                    <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Shield:</b>    {{person.shield}}</li>
+                    <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Armor:</b>     {{person.armor}}    <b>AC:</b> {{person.ac}}</li>
                     
 
                     
-                    
-                    <button class="btn btn-info" style="border-color: rgb(184, 163, 114); text-align: left; background-color: rgb(218, 192, 129);" onclick="window.location.href='/slaves/increase_counter/{{ slave.pk }}/';"><b>Level:</b> {{slave.lvl}} (+1)</button>
-                    
-                    
-
-                    <script type="text/javascript">
-                                $.ajax({
-
-                                url: '/slaves/slave_list/',
-                                method : 'POST',
-                                success: function(response) {
-
-                                alert('LVL increased')
-                                }
-                                }); 
-                    </script>
-
-
-                    
+                       
                 </ul>
                 <div class="card-body">
-                    <a href="/people/person_detail/{{slave.id}}" class="card-link" ><button type="button" class="btn btn-info">Details</button></a>
-                    <a href="/people/person_update/{{slave.id}}" class="card-link">Update</a>
-                    <a href="/people/person_delete/{{slave.id}}" class="card-link"><button type="button" class="btn btn-danger">Delete</button></a>
+                    <a href="/people/person_detail/{{person.id}}" class="card-link" ><button type="button" class="btn btn-info">Details</button></a>
+                    <a href="/people/person_update/{{person.id}}" class="card-link">Update</a>
+                    <a href="/people/person_delete/{{person.id}}" class="card-link"><button type="button" class="btn btn-danger">Delete</button></a>
                     
 
                 </div>
