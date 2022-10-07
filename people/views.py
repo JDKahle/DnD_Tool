@@ -42,3 +42,14 @@ class PersonCreateView(CreateView):
         obj.save
         return super().form_valid(form)
 
+
+
+class PersonListView(LoginRequiredMixin, ListView):
+    model = Person
+    context_object_name = "list_of_slaves"
+    queryset = Person.objects.order_by("first_name")
+
+
+    def get_queryset(self):
+        return Person.objects.filter(owner=self.request.user)
+
