@@ -63,6 +63,7 @@ class NewPersonBattleListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return Person.objects.filter(owner=self.request.user)
 
+
 class PersonLvlListView(ListView):
     model = Person
     context_object_name = "list_of_people"
