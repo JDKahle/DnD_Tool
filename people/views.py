@@ -46,7 +46,7 @@ class PersonCreateView(CreateView):
 
 class PersonListView(LoginRequiredMixin, ListView):
     model = Person
-    context_object_name = "list_of_persons"
+    context_object_name = "list_of_people"
     queryset = Person.objects.order_by("first_name")
 
 
