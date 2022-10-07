@@ -68,3 +68,7 @@ class PersonLvlListView(ListView):
     model = Person
     context_object_name = "list_of_people"
     queryset = Person.objects.order_by("lvl").reverse()
+
+
+#### Hier hin kommen funktion von den zeilen 87 und 120.
+
