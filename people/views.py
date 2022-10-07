@@ -46,10 +46,19 @@ class PersonCreateView(CreateView):
 
 class PersonListView(LoginRequiredMixin, ListView):
     model = Person
-    context_object_name = "list_of_slaves"
+    context_object_name = "list_of_persons"
     queryset = Person.objects.order_by("first_name")
 
 
     def get_queryset(self):
         return Person.objects.filter(owner=self.request.user)
 
+
+class NewPersonBattleListView(LoginRequiredMixin, ListView):
+    model = Person
+    context_object_name = "list_of_slaves"
+    queryset = Person.objects.order_by("first_name")
+    template_name = 'people/person_list_battlex.html'
+
+    def get_queryset(self):
+        return Person.objects.filter(owner=self.request.user)

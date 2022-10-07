@@ -1,0 +1,63 @@
+
+
+{% extends "base.html" %}
+{% block content %}
+
+
+
+<div style="background-image: url('https://c-rpg.net/img/bg.jpg');">
+
+    <h1 style="text-align: center; color: rgb(94, 11, 11)">Battle List</h1>
+
+    <a href="{% url 'list_slave' %}" class="card-link" ><button type="button" class="btn btn-light">Alphabetical</button></a>
+    <a href="#" class="card-link" ><button type="button" class="btn btn-light">Lvl</button></a>
+
+    
+    <div style="display: flex; margin: 1rem; flex-wrap: wrap;">
+
+        {% for slave in list_of_slaves %}
+
+
+        <div class="card" style="width: 18rem; margin: 3px; min-width: 200px; background-color: rgb(218, 192, 129);">
+            <!-- <img src="https://d1vzi28wh99zvq.cloudfront.net/images/8957/298771.png" class="card-img-top" alt="..."> -->
+            <div class="card-body">
+                <h5 class="card-title">{{slave.caste}} {{slave.first_name}}</h5>
+            </div>
+
+            <!-- 1 -->
+            <ul class="list-group list-group-flush" style="background-color: rgb(218, 192, 129);">
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Weapons:</b>   {{slave.weapon}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Shield:</b>    {{slave.shield}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>AC:</b>     {{slave.ac}}<b>Armor:</b>     {{slave.armor}}</li>
+                
+                <li class="list-group-item" style="background-color: rgb(184, 163, 114);"></li>
+
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Str:</b>{{slave.str}}<b>||</b>   <b>Dex:</b>{{slave.dex}}<b>||</b>   <b>Con:</b>{{slave.con}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Int:</b>{{slave.int}}<b>||</b>   <b>Wis:</b>{{slave.wis}}<b>||</b>   <b>Cha:</b>{{slave.cha}}</li>
+
+                <li class="list-group-item" style="background-color: rgb(184, 163, 114);"></li>
+
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>Speed:</b>     {{slave.speed}}    <b>Passive Perception:</b>{{slave.passive_perception}}</li>
+                <li class="list-group-item" style="background-color: rgb(218, 192, 129);"><b>HP:</b>        {{slave.hp}}</li>
+            <!-- 3 -->
+            <button class="btn btn-info" style="border-color: rgb(184, 163, 114); text-align: left; background-color: rgb(218, 192, 129);" onclick="window.location.href='/slaves/new_increase_HP_battle/{{ slave.pk }}/';"><b>HP:</b> {{slave.HP}} (+1)</button>
+
+                <!-- Hier hin kommen 2 js buttons -->
+            <!-- 3 -->
+            </ul>
+            <!-- 1 -->
+            <!-- 2 -->
+            <div class="card-body">
+                <a href="/person/person_detail/{{person.id}}" class="card-link" ><button type="button" class="btn btn-info">Details</button></a>
+                <a href="/person/person_update/{{person.id}}" class="card-link">Update</a>
+                <a href="/person/person_delete/{{person.id}}" class="card-link"><button type="button" class="btn btn-danger">Delete</button></a>
+            </div>
+            <!-- 2 -->
+            
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+{% endblock content %}
