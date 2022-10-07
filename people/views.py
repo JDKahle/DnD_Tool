@@ -34,7 +34,7 @@ class PersonCreateView(CreateView):
     model = Person
     # model_form.html --> teacher_form.html
     fields = '__all__'
-    success_url = reverse_lazy('people:list_person')
+    success_url = reverse_lazy('list_person')
 
     def form_valid(self, form):     # Alles hier drin ist dafür verantwortlich, 
         obj = form.save(commit=False)   # dass ein sklave automatisch einen owner bekommt.
