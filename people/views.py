@@ -72,3 +72,6 @@ class PersonLvlListView(ListView):
 
 #### Hier hin kommen funktion von den zeilen 87 und 120.
 
+
+class PersonDetailView(DetailView):
+    model = Person

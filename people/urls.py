@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import NewPersonBattleListView, PersonHomeView, PersonCreateView, PersonListView, PersonLvlListView
+from .views import NewPersonBattleListView, PersonHomeView, PersonCreateView, PersonListView, PersonLvlListView, PersonDetailView
 
 from . import views
 
@@ -11,5 +11,7 @@ urlpatterns = [
     path('person_list/', PersonListView.as_view(), name='list_person'),
     path('person_list_battle/', NewPersonBattleListView.as_view(), name='battle_list_person'),
     path('person_list/lvl/', PersonLvlListView.as_view(), name='lvl_list_person'),
+    path('person_detail/', PersonDetailView.as_view(), name='detail_person'),
+    
 
 ]
