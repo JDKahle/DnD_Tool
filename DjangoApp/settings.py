@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['139.144.67.109']
 # Application definition
 
 INSTALLED_APPS = [
-    'people.apps.PeopleConfig',
+    'person.apps.PersonConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
