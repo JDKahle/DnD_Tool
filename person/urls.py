@@ -3,7 +3,7 @@ from .views import NewPersonBattleListView, PersonHomeView, PersonCreateView, Pe
 
 from . import views
 
-# ######:8000/people/
+# ######:8000/person/
 urlpatterns = [
 #    path('', views.simple_view),
     path('', PersonHomeView.as_view(), name='home'),

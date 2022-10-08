@@ -27,7 +27,7 @@ def simple_view(request):
 
 # Create your views here.
 class PersonHomeView(TemplateView):
-    template_name = 'people/home.html'
+    template_name = 'person/home.html'
 
 
 class PersonCreateView(CreateView):
@@ -46,7 +46,7 @@ class PersonCreateView(CreateView):
 
 class PersonListView(LoginRequiredMixin, ListView):
     model = Person
-    context_object_name = "list_of_people"
+    context_object_name = "list_of_person"
     queryset = Person.objects.order_by("first_name")
 
 
@@ -56,9 +56,9 @@ class PersonListView(LoginRequiredMixin, ListView):
 
 class NewPersonBattleListView(LoginRequiredMixin, ListView):
     model = Person
-    context_object_name = "list_of_people"
+    context_object_name = "list_of_person"
     queryset = Person.objects.order_by("first_name")
-    template_name = 'people/person_list_battlex.html'
+    template_name = 'person/person_list_battlex.html'
 
     def get_queryset(self):
         return Person.objects.filter(owner=self.request.user)
@@ -66,7 +66,7 @@ class NewPersonBattleListView(LoginRequiredMixin, ListView):
 
 class PersonLvlListView(ListView):
     model = Person
-    context_object_name = "list_of_people"
+    context_object_name = "list_of_person"
     queryset = Person.objects.order_by("lvl").reverse()
 
 
